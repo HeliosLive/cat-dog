@@ -1,0 +1,52 @@
+:host {
+  &[data-type='heading'] ::ng-deep {
+    font-size: var(--hls-font-heading-size);
+    font-weight: var(--hls-font-heading-weight);
+  }
+
+  &[data-type='subheading'] ::ng-deep {
+    font-size: var(--hls-font-subheading-size);
+    font-weight: var(--hls-font-subheading-weight);
+  }
+
+  &[data-type='title'] ::ng-deep {
+    font-size: var(--hls-font-title-size);
+    font-weight: var(--hls-font-title-weight);
+  }
+
+  &[data-type='subtitle'] ::ng-deep {
+    font-size: var(--hls-font-subtitle-size);
+    font-weight: var(--hls-font-subtitle-weight);
+  }
+
+  &[data-type='p'] ::ng-deep {
+    font-size: var(--hls-font-p-size);
+    font-weight: var(--hls-font-p-weight);
+  }
+
+  &[data-type='caption'] ::ng-deep {
+    font-size: var(--hls-font-caption-size);
+    font-weight: var(--hls-font-caption-weight);
+  }
+}
+
+:host(.hls-text-disabled) {
+  opacity: 0.5;
+}
+
+:host(.hls-text-ellipsis) {
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host(.hls-text-underline) {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+:host(.hls-text-pointer) {
+  cursor: pointer;
+}
