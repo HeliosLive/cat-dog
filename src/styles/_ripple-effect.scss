@@ -1,0 +1,43 @@
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--hls-ripple-color);
+  opacity: 0.5;
+  transform: scale(0);
+  animation-name: ripple;
+  animation-timing-function: linear;
+  animation-duration: var(--hls-ripple-speed);
+
+  &-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &.light {
+    background-color: var(--hls-ripple-color-light);
+  }
+
+  &.dark {
+    background-color: var(--hls-ripple-color-dark);
+  }
+
+  &.slow {
+    animation-duration: var(--hls-ripple-speed-slow);
+  }
+
+  &.normal {
+    animation-duration: var(--hls-ripple-speed-normal);
+  }
+
+  &.fast {
+    animation-duration: var(--hls-ripple-speed-fast);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

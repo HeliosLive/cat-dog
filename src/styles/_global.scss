@@ -1,0 +1,65 @@
+@use './colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  /* Font families */
+  --hls-font-family: 'Roboto', sans-serif;
+  --hls-font-family-monospace: 'Roboto Mono', monospace;
+
+  /* Font size */
+  --hls-font-heading-size: 1.75rem;
+  --hls-font-subheading-size: 1.5rem;
+  --hls-font-title-size: 1.375rem;
+  --hls-font-subtitle-size: 1.125rem;
+  --hls-font-p-size: 0.875rem;
+  --hls-font-caption-size: 0.625rem;
+
+  /* Button size */
+  --hls-button-border-radius: 4px;
+
+  /* Button styling */
+  --hls-button-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  /* Button coloring */
+  --hls-button-background-primary: #{$azure-radiance};
+  --hls-button-background-secondary: #{$white};
+
+  /* Header styling */
+  --hls-header-height: 6rem;
+  --hls-header-background-color: var(--hls-color-light);
+
+  /* Footer styling */
+  --hls-footer-height: 3.5rem;
+  --hls-footer-background-color: var(--hls-color-light);
+
+  /* Desktop sizes */
+  --hls-desktop-width: 500px;
+
+  /* Background coloring */
+  --hls-background-color: var(--hls-color-light);
+
+  /* Ripple coloring */
+  --hls-ripple-color: var(--hls-ripple-color-light);
+  --hls-ripple-color-light: var(--hls-color-light);
+  --hls-ripple-color-dark: var(--hls-color-soft-light);
+
+  /* Ripple styling */
+  --hls-ripple-speed: var(--hls-ripple-speed-normal);
+  --hls-ripple-speed-slow: 1s;
+  --hls-ripple-speed-normal: 0.5s;
+  --hls-ripple-speed-fast: 0.25s;
+
+  /* Color palette */
+  --hls-color-soft-light: #{$whisper};
+  --hls-color-light: #{$white};
+
+  --hls-color-info: #{$azure-radiance};
+  --hls-color-caution: #{$sunset};
+  --hls-color-warning: #{$blaze-orange};
+  --hls-color-danger: #{$persian-red};
+  --hls-color-success: #{$green-hill};
+
+  /* Color aliases */
+  --hls-color-primary: var(--hls-color-info);
+  --hls-color-accent: var(--hls-color-success);
+}
