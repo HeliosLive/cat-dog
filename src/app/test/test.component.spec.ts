@@ -1,12 +1,12 @@
 import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 
-import { AppComponent } from './app.component';
+import { TestComponent } from './test.component';
 
-describe('AppComponent', () => {
-  let spectator: Spectator<AppComponent>;
+describe('TestComponent', () => {
+  let spectator: Spectator<TestComponent>;
 
   const createComponent = createComponentFactory({
-    component: AppComponent,
+    component: TestComponent,
     shallow: true,
   });
 
@@ -18,9 +18,9 @@ describe('AppComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 
-  it('should h1 tag text equals to title', () => {
-    const title = spectator.query('h1');
+  it('should p tag exist', () => {
+    const p = spectator.query('p');
 
-    expect(title).toContainText(spectator.component.title);
+    expect(p).toExist();
   });
 });

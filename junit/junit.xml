@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="3.224">
-  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2022-05-07T12:59:14" time="2.212" tests="2">
-    <testcase classname="AppComponent should create" name="AppComponent should create" time="0.03">
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="4.149">
+  <testsuite name="TestComponent" errors="0" failures="0" skipped="0" timestamp="2022-05-07T16:17:09" time="3.003" tests="2">
+    <testcase classname="TestComponent should create" name="TestComponent should create" time="0.048">
     </testcase>
-    <testcase classname="AppComponent should call detectChanges in changeDetectorRef on ngAfterContentChecked" name="AppComponent should call detectChanges in changeDetectorRef on ngAfterContentChecked" time="0.021">
+    <testcase classname="TestComponent should p tag exist" name="TestComponent should p tag exist" time="0.028">
     </testcase>
   </testsuite>
 </testsuites>
