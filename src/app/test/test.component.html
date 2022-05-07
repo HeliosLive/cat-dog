@@ -1,3 +1,13 @@
-<p>
-  test works!
-</p>
+TEXT TYPES :
+<hls-text type="heading">this is a heading</hls-text>
+<hls-text type="subheading">this is a subheading</hls-text>
+<hls-text type="title">this is a title</hls-text>
+<hls-text type="subtitle">this is a subtitle</hls-text>
+<hls-text type="p">this is a p</hls-text>
+<hls-text type="caption">this is a caption</hls-text>
+<hls-text type="subtitle" [ellipsis]="true"> {{'this is an ellipsis text--'.repeat(30)}}
+</hls-text>
+<hls-text type="subtitle" [pointer]="true" testId="pointer_text"> this is an pointer text
+</hls-text>
+<hls-text type="subtitle" [underline]="true" testId="underline_text">this is an underline text
+</hls-text>
