@@ -8,6 +8,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HLSTextModule } from '@shared/components/text/text.module';
 import { HLSButtonModule } from '@shared/components/button/button.module';
 import { HLSRippleDirectiveModule } from '@shared/directives/ripple/ripple.directive.module';
+import { HLSLottieAnimationModule } from '@shared/components/lottie-animation/lottie-animation.module';
 
 @NgModule({
   declarations: [TestComponent],
@@ -17,6 +18,7 @@ import { HLSRippleDirectiveModule } from '@shared/directives/ripple/ripple.direc
     AngularSvgIconModule,
     HLSTextModule,
     HLSButtonModule,
+    HLSLottieAnimationModule,
     HLSRippleDirectiveModule,
   ],
   exports: [TestComponent],
