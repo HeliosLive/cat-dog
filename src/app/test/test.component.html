@@ -22,3 +22,40 @@ TEXT TYPES :
 <button hls-button>simple button</button> <br>
 <button hls-outlined-button>outlined button</button> <br>
 <button hls-outlined-button [disabled]="true">disabled button</button>
+
+<div class="icons" (click)="onLike()">
+    <svg-icon class="heart" [class.liked]="liked" name="heart" attr.testId="heart">
+    </svg-icon>
+    <svg-icon class="question-mark" [class.question-mark]="liked" name="question-mark" attr.testId="question-mark">
+    </svg-icon>
+</div>
+
+<div class="icons">
+    <svg-icon class="amazed" name="amazed" attr.testId="amazed">
+    </svg-icon>
+    <svg-icon class="crying" name="crying" attr.testId="crying">
+    </svg-icon>
+    <svg-icon class="embarrassed" name="embarrassed" attr.testId="embarrassed">
+    </svg-icon>
+    <svg-icon class="happiness" name="happiness" attr.testId="happiness">
+    </svg-icon>
+    <svg-icon class="indifferent" name="indifferent" attr.testId="indifferent">
+    </svg-icon>
+    <svg-icon class="laughing" name="laughing" attr.testId="laughing">
+    </svg-icon>
+</div>
+
+<div class="icons">
+    <svg-icon class="cat" name="cat" attr.testId="cat">
+    </svg-icon>
+    <svg-icon class="dog" name="dog" attr.testId="dog">
+    </svg-icon>
+</div>
+
+<div class="icons">
+    <img src="../../assets/image/cat-dog.png" alt="cat-dog">
+</div>
+
+<div class="icons">
+    <img src="https://cdn2.thecatapi.com/images/G35Hlveey.jpg" alt="cat">
+</div>
