@@ -17,10 +17,4 @@ describe('TestComponent', () => {
   it('should create', () => {
     expect(spectator.component).toBeTruthy();
   });
-
-  it('should p tag exist', () => {
-    const p = spectator.query('p');
-
-    expect(p).toExist();
-  });
 });
