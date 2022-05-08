@@ -16,6 +16,7 @@ module.exports = {
     collectCoverageFrom: [
         '**/src/**/*.ts',
         '!**/node_modules/**',
+        '!**/src/app/core/svg-register/**',
         '!**/src/main.ts',
         '!**/src/jestGlobalMocks.ts',
         '!**/src/**/*.module.ts',
@@ -38,6 +39,7 @@ module.exports = {
         "node_modules"
     ],
     moduleNameMapper: {
+        '@core/(.*)': 'src/app/core/$1',
         '@shared/(.*)': 'src/app/shared/$1',
     }
 };
