@@ -23,6 +23,7 @@
   --hls-font-caption-weight: 300;
 
   /* Button size */
+  --hls-button-height: 56px;
   --hls-button-border-radius: 4px;
 
   /* Button styling */
@@ -60,6 +61,8 @@
   /* Color palette */
   --hls-color-soft-light: #{$whisper};
   --hls-color-light: #{$white};
+  --hls-color-soft-dark: #{$gray};
+  --hls-color-dark: #{$black};
 
   --hls-color-info: #{$azure-radiance};
   --hls-color-caution: #{$sunset};
@@ -69,5 +72,6 @@
 
   /* Color aliases */
   --hls-color-primary: var(--hls-color-info);
-  --hls-color-accent: var(--hls-color-success);
+  --hls-color-secondary: var(--hls-color-caution);
+  --hls-color-tertiary: var(--hls-color-success);
 }

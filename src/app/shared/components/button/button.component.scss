@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  border: none;
+  outline: none;
+  height: var(--hls-button-height);
+  border-radius: var(--hls-button-border-radius);
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  cursor: pointer;
+
+  &:not(.hls-button-disabled) {
+    color: var(--hls-color-light);
+  }
+
+  &[color='primary'] ::ng-deep {
+    background-color: var(--hls-color-primary);
+  }
+
+  &[color='secondary'] ::ng-deep {
+    background-color: var(--hls-color-secondary);
+  }
+
+  &[color='tertiary'] ::ng-deep {
+    background-color: var(--hls-color-tertiary);
+  }
+
+  &[color='warning'] ::ng-deep {
+    background-color: var(--hls-color-warning);
+  }
+
+  &[color='danger'] ::ng-deep {
+    background-color: var(--hls-color-danger);
+  }
+
+  &[color='light'] ::ng-deep {
+    background-color: var(--hls-color-light);
+    color: var(--hls-color-dark);
+  }
+
+  &.hls-raised-button:not(.hls-button-disabled) {
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+  }
+
+  &.hls-outlined-button:not(.hls-button-disabled) {
+    color: var(--hls-color-dark);
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-color: var(--hls-color-soft-dark);
+  }
+
+  &.hls-button-disabled {
+    cursor: default;
+  }
+}
