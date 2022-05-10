@@ -1,0 +1,9 @@
+<header>
+  <svg-icon class="question-mark" name="question-mark" [attr.data-cy]="'cat-question-mark-icon'"
+    (click)="questioned.emit('cat')">
+  </svg-icon>
+  <img src="../../assets/image/cat-dog.png" alt="cat-dog">
+  <svg-icon class="question-mark" name="question-mark" [attr.data-cy]="'dog-question-mark-icon'"
+    (click)="questioned.emit('dog')">
+  </svg-icon>
+</header>

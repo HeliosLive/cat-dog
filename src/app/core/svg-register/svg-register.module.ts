@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { AngularSvgIconModule, SvgIconRegistryService } from 'angular-svg-icon';
 
 import { actionIcons } from './action-icons';
+import { personIcons } from './person-icons';
 import { animalIcons } from './animal-icons';
 import { emojiIcons } from './emoji-icons';
 
@@ -16,6 +17,14 @@ export class SvgRegisterModule {
       ?.subscribe();
     this.iconReg
       .loadSvg('assets/svg/action/question-mark.svg', actionIcons.questionMark)
+      ?.subscribe();
+
+    /* people */
+    this.iconReg
+      .loadSvg('assets/svg/person/male.svg', personIcons.male)
+      ?.subscribe();
+    this.iconReg
+      .loadSvg('assets/svg/person/female.svg', personIcons.female)
       ?.subscribe();
 
     /* animals */
