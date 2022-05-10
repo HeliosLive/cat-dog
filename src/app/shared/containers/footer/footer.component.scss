@@ -1,0 +1,41 @@
+:host {
+  position: fixed;
+  z-index: 98;
+  bottom: 0;
+  grid-area: footer;
+  width: 100%;
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: var(--hls-footer-height);
+    background-color: var(--hls-footer-background-color);
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 50%);
+
+    svg-icon {
+      width: 2.5rem;
+      transition: fill 700ms ease-in-out;
+
+      &.active:not(svg-icon:nth-child(2)) {
+        fill: var(--hls-svg-animal-active-color);
+        animation: rotateSpin 1s linear;
+      }
+    }
+  }
+}
+
+@keyframes rotateSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotateY(240deg) scale(1.1);
+  }
+  66% {
+    transform: rotateY(480deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+  }
+}

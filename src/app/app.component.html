@@ -1,2 +1,7 @@
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
+<hls-header [trackElementForScroll]="body"></hls-header>
+
+<div #body class="body">
+    <router-outlet></router-outlet>
+</div>
+
+<hls-footer></hls-footer>

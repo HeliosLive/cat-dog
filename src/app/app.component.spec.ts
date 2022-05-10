@@ -2,6 +2,8 @@ import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 
 import { AppComponent } from './app.component';
 
+import * as windowUtils from '@shared/utils/window';
+
 describe('AppComponent', () => {
   let spectator: Spectator<AppComponent>;
 
@@ -18,9 +20,11 @@ describe('AppComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 
-  it('should h1 tag text equals to title', () => {
-    const title = spectator.query('h1');
+  it('should call listenViewportHeight when app started', () => {
+    jest.spyOn(windowUtils, 'listenViewportHeight');
 
-    expect(title).toContainText(spectator.component.title);
+    spectator.component.ngOnInit();
+
+    expect(windowUtils.listenViewportHeight).toHaveBeenCalled();
   });
 });

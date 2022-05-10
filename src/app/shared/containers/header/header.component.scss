@@ -1,0 +1,101 @@
+:host {
+  grid-area: header;
+  z-index: 98;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: var(--hls-header-height);
+    background-color: var(--hls-header-background-color);
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 25%);
+    transition: height 0.5s ease-in-out;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    svg-icon {
+      transition: width 0.5s ease-in-out;
+      width: calc(var(--hls-header-height) / 3.5);
+
+      &:nth-child(1) {
+        animation: tilt 6s infinite ease-in-out;
+        animation-delay: 4s;
+        transform: rotate(180deg);
+      }
+
+      &:nth-child(3) {
+        animation: tiltReverse 6s infinite ease-in-out;
+        animation-delay: 6s;
+      }
+    }
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75);
+  }
+  2% {
+    transform: translate(-5%, -10%) scale(1, 1);
+  }
+  3% {
+    transform: translate(-5%, -10%) rotate(15deg);
+  }
+  4% {
+    transform: translate(-5%, -10%) rotate(-15deg);
+  }
+  5% {
+    transform: translate(-5%, -10%) rotate(15deg);
+  }
+  6% {
+    transform: translate(-5%, -10%) rotate(-15deg) rotate(180deg);
+  }
+  7% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75) rotate(180deg);
+  }
+  10% {
+    transform: translate(-5%, -5%) scale(1, 1) rotate(180deg);
+  }
+  95% {
+    transform: translate(-5%, -5%) scale(1, 1) rotate(180deg);
+  }
+  100% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75) rotate(180deg);
+  }
+}
+
+@keyframes tiltReverse {
+  0% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75) rotate(180deg);
+  }
+  2% {
+    transform: translate(-5%, -10%) scale(1, 1) rotate(180deg);
+  }
+  3% {
+    transform: translate(-5%, -10%) rotate(15deg) rotate(180deg);
+  }
+  4% {
+    transform: translate(-5%, -10%) rotate(-15deg) rotate(180deg);
+  }
+  5% {
+    transform: translate(-5%, -10%) rotate(15deg) rotate(180deg);
+  }
+  6% {
+    transform: translate(-5%, -10%) rotate(-15deg) rotate(180deg);
+  }
+  7% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75);
+  }
+  10% {
+    transform: translate(-5%, -5%) scale(1, 1);
+  }
+  95% {
+    transform: translate(-5%, -5%) scale(1, 1);
+  }
+  100% {
+    transform: translate(-5%, -5%) scale(1.25, 0.75);
+  }
+}

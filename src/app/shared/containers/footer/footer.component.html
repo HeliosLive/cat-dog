@@ -1,0 +1,5 @@
+<footer>
+  <svg-icon *ngFor="let section of sections" [class.active]="section === selectedSection"
+    [name]="section==='user' ? gender : section" [attr.data-cy]="section + '-icon'" (click)="onSelect(section)">
+  </svg-icon>
+</footer>

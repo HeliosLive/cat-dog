@@ -48,3 +48,11 @@ Object.defineProperty(navigator, 'mediaDevices', {
     getUserMedia: mockGetUserMedia,
   },
 });
+
+Object.defineProperty(window, 'getComputedStyle', {
+  value: () => ({
+    getPropertyValue: () => {
+      return '';
+    },
+  }),
+});
