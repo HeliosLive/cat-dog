@@ -18,6 +18,9 @@ export class SvgRegisterModule {
     this.iconReg
       .loadSvg('assets/svg/action/question-mark.svg', actionIcons.questionMark)
       ?.subscribe();
+    this.iconReg
+      .loadSvg('assets/svg/action/dots.svg', actionIcons.dots)
+      ?.subscribe();
 
     /* people */
     this.iconReg

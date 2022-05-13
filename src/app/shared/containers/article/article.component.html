@@ -1,0 +1,15 @@
+<article>
+  <img [src]="article.user.picture" alt="profile-picture">
+  <hls-text type="subtitle">{{article.user.name}}</hls-text>
+  <svg-icon name="dots" attr.testId="dots">
+  </svg-icon>
+  <img #img [src]="article.image" alt="cat">
+  <svg-icon class="heart__small" [class.active]="liked" name="heart" [attr.testId]="'heart'" (click)="onLike()">
+  </svg-icon>
+  <hls-text [ngClass]="'description-show__' + (showMore ? 'less' : 'more')" type="p" (click)="onShowMore()">
+    {{article.description}}{{article.description}}{{article.description}}{{article.description}}
+  </hls-text>
+  <hls-text type="caption">{{article.date | hlsTimeAgo}}</hls-text>
+  <svg-icon class="heart__large" [class.active]="animatedLiked" name="heart" [attr.testId]="'like'">
+  </svg-icon>
+</article>
