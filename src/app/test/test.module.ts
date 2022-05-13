@@ -9,6 +9,7 @@ import { HLSTextModule } from '@shared/components/text/text.module';
 import { HLSButtonModule } from '@shared/components/button/button.module';
 import { HLSRippleDirectiveModule } from '@shared/directives/ripple/ripple.directive.module';
 import { HLSLottieAnimationModule } from '@shared/components/lottie-animation/lottie-animation.module';
+import { HLSArticleModule } from '@shared/containers/article/article.module';
 
 @NgModule({
   declarations: [TestComponent],
@@ -16,6 +17,7 @@ import { HLSLottieAnimationModule } from '@shared/components/lottie-animation/lo
     CommonModule,
     TestRoutingModule,
     AngularSvgIconModule,
+    HLSArticleModule,
     HLSTextModule,
     HLSButtonModule,
     HLSLottieAnimationModule,

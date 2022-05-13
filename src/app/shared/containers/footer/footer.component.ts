@@ -14,7 +14,7 @@ import type { Section } from '@shared/models/section.type';
   selector: 'hls-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
   @Input() gender: Gender = 'male';

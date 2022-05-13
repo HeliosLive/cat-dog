@@ -1,0 +1,15 @@
+export enum TimeAgoEnum {
+  SECONDS = 'a few seconds ago',
+  MINUTE = 'a minute ago',
+  MINUTES = 'minutes ago',
+  HOUR = 'an hour ago',
+  HOURS = 'hours ago',
+  DAY = 'a day ago',
+  DAYS = 'days ago',
+  WEEK = 'a week ago',
+  WEEKS = 'weeks ago',
+  MONTH = 'a month ago',
+  MONTHS = 'months ago',
+  YEAR = 'a year ago',
+  YEARS = 'years ago',
+}

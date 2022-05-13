@@ -1,0 +1,123 @@
+:host {
+  hls-text {
+    margin: auto 0;
+  }
+
+  article {
+    position: relative;
+    display: grid;
+    align-items: flex-end;
+    justify-items: start;
+    grid-template-areas:
+      'picture name settings'
+      'content content content'
+      'like description description'
+      'date date .';
+    grid-template-rows: 3rem var(--hls-article-height) 3rem 1rem;
+    grid-template-columns: 3rem auto 2rem;
+    padding: 0.5rem 0;
+
+    $areas: picture, name, settings, content, like, description, date;
+
+    @each $area in $areas {
+      $i: index($areas, $area);
+      & > *:nth-child(#{$i}) {
+        grid-area: $area;
+      }
+    }
+
+    .description-show {
+      &__less {
+        position: absolute;
+        font-weight: bolder;
+      }
+      &__more {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+
+      &:first-child {
+        border-radius: 50%;
+      }
+    }
+
+    svg-icon {
+      width: 50%;
+      margin: auto;
+
+      &.heart {
+        &__small {
+          #outer {
+            fill: var(--hls-svg-heart-outer-color);
+          }
+          #inner {
+            fill: var(--hls-svg-heart-inner-color);
+          }
+
+          &.active {
+            animation: smallScale 0.5s ease-in-out;
+
+            #outer,
+            #inner {
+              fill: var(--hls-svg-heart-active-color);
+            }
+          }
+        }
+
+        &__large {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 4rem;
+          opacity: 0;
+
+          @each $side in outer, inner {
+            ##{$side} {
+              fill: var(--hls-svg-liked-#{$side}-color);
+            }
+          }
+
+          &.active {
+            animation: largeScall 0.8s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes smallScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes largeScall {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  20%,
+  55% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
