@@ -1,0 +1,39 @@
+:host {
+  border: solid 1px #ccc;
+  border-radius: 0.4rem 0 0.4rem 0.4rem;
+  background: var(--hls-background-color);
+
+  & > li {
+    display: flex;
+    padding: 0.5rem 0.5rem 0 0.25rem;
+    list-style-type: none;
+    border-bottom: solid 1px #8b8b8b;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    svg-icon {
+      height: 1.5rem;
+      width: 1.5rem;
+
+      $actions: save, hide, report;
+
+      @each $action in $actions {
+        &.#{$action} {
+          path {
+            stroke: var(--hls-svg-#{$action}-outer-color);
+            fill: var(--hls-svg-#{$action}-inner-color);
+          }
+
+          &.active {
+            path {
+              stroke: var(--hls-svg-#{$action}-outer-active-color);
+              fill: var(--hls-svg-#{$action}-inner-active-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

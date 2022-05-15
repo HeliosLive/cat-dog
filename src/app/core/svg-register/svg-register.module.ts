@@ -21,6 +21,15 @@ export class SvgRegisterModule {
     this.iconReg
       .loadSvg('assets/svg/action/dots.svg', actionIcons.dots)
       ?.subscribe();
+    this.iconReg
+      .loadSvg('assets/svg/action/save.svg', actionIcons.save)
+      ?.subscribe();
+    this.iconReg
+      .loadSvg('assets/svg/action/hide.svg', actionIcons.hide)
+      ?.subscribe();
+    this.iconReg
+      .loadSvg('assets/svg/action/report.svg', actionIcons.report)
+      ?.subscribe();
 
     /* people */
     this.iconReg

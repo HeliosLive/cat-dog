@@ -15,6 +15,7 @@
       var(--vh, 1vh) * 100 -
         (var(--hls-header-height) + var(--hls-footer-height))
     );
+    background-color: var(--hls-background-color);
 
     &::-webkit-scrollbar {
       display: none;
