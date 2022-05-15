@@ -1,0 +1,9 @@
+ <li *ngFor="let action of actions">
+   <svg-icon [class]="action" [class.active]="isActive(action)" [name]="action" [attr.testId]="action + 'icon'">
+   </svg-icon>
+   <hls-text type="p" [pointer]="true">
+     {{
+      (isActive(action) ? action + '-' + isActive(action) : action) | titlecase
+      }}
+   </hls-text>
+ </li>

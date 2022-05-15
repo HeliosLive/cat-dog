@@ -11,6 +11,7 @@ export type TextType =
   | 'title'
   | 'subtitle'
   | 'p'
+  | 'span'
   | 'caption';
 
 @Component({

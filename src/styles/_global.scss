@@ -11,7 +11,8 @@
   --hls-font-subheading-size: 1.5rem;
   --hls-font-title-size: 1.375rem;
   --hls-font-subtitle-size: 1.125rem;
-  --hls-font-p-size: 0.75rem;
+  --hls-font-p-size: 0.9rem;
+  --hls-font-span-size: 0.75rem;
   --hls-font-caption-size: 0.625rem;
 
   /* Font weight */
@@ -19,7 +20,8 @@
   --hls-font-subheading-weight: 700;
   --hls-font-title-weight: 600;
   --hls-font-subtitle-weight: 500;
-  --hls-font-p-weight: 400;
+  --hls-font-p-weight: 500;
+  --hls-font-span-weight: 400;
   --hls-font-caption-weight: 300;
 
   /* Button size */
@@ -70,6 +72,14 @@
   --hls-svg-heart-active-color: #{$persian-red};
   --hls-svg-liked-outer-color: #b3404a;
   --hls-svg-liked-inner-color: #f5827e;
+  --hls-svg-hide-outer-color: transparent;
+  --hls-svg-hide-inner-color: #{$black};
+  --hls-svg-report-outer-color: transparent;
+  --hls-svg-report-inner-color: #{$red};
+  --hls-svg-save-outer-color: #{$black};
+  --hls-svg-save-inner-color: #{$white};
+  --hls-svg-save-outer-active-color: #{$black};
+  --hls-svg-save-inner-active-color: #{$persian-red};
 
   /* Color palette */
   --hls-color-soft-light: #{$whisper};

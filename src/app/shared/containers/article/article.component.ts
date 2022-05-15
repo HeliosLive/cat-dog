@@ -36,16 +36,18 @@ export class ArticleComponent implements OnInit, OnDestroy {
   @HostBinding('attr.data-cy')
   testId?: string;
 
+  actionOpen = false;
   animatedLiked = false;
   showMore = false;
   private likeBuffer = 800;
-  private destroy$ = new Subject();
+  private destroy$ = new Subject<void>();
 
   ngOnInit() {
     this.trackDoubleTap();
   }
 
   ngOnDestroy(): void {
+    this.destroy$.next();
     this.destroy$.complete();
   }
 
