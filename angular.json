@@ -92,13 +92,22 @@
           "options": {
             "configPath": "./jest.config.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "cat-dog",
   "cli": {
-    "defaultCollection": "@ngrx/schematics",
+    "defaultCollection": "@angular-eslint/schematics",
     "analytics": false
   }
 }
