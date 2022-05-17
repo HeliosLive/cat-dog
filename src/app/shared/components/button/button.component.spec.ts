@@ -1,9 +1,4 @@
-import {
-  createComponentFactory,
-  createHostFactory,
-  Spectator,
-  SpectatorHost,
-} from '@ngneat/spectator/jest';
+import { createComponentFactory, createHostFactory, Spectator, SpectatorHost } from '@ngneat/spectator/jest';
 
 import type { ButtonColor } from './button.component';
 import { ButtonComponent } from './button.component';
@@ -22,9 +17,7 @@ describe('Button', () => {
     describe('content projection', () => {
       it('should text component type equals to textType input', () => {
         const textType: TextType = 'caption';
-        spectatorHost = createHost(
-          `<button hls-button textType=${textType}></button>`
-        );
+        spectatorHost = createHost(`<button hls-button textType=${textType}></button>`);
 
         expect(spectatorHost.component.textType).toEqual(textType);
       });
@@ -34,9 +27,7 @@ describe('Button', () => {
         spectatorHost = createHost(`<button hls-button>${text}</button>`);
 
         expect(spectatorHost.element.textContent).toEqual(text);
-        expect(spectatorHost.element.textContent).not.toEqual(
-          `incorrect${text}incorrect`
-        );
+        expect(spectatorHost.element.textContent).not.toEqual(`incorrect${text}incorrect`);
       });
     });
 
@@ -50,8 +41,7 @@ describe('Button', () => {
       it('should Host has the specific class for passed selector', () => {
         spectatorHost = createHost(`<button hls-raised-button></button>`);
 
-        const elementClass =
-          spectatorHost.element?.className.includes('hls-raised-button');
+        const elementClass = spectatorHost.element?.className.includes('hls-raised-button');
 
         expect(elementClass).toBe(true);
       });
@@ -65,41 +55,29 @@ describe('Button', () => {
       });
 
       it('should Host disabled attr does not exist if disabled input is false', () => {
-        spectatorHost = createHost(
-          `<button hls-button [disabled]="false"></button>`
-        );
+        spectatorHost = createHost(`<button hls-button [disabled]='false'></button>`);
 
         expect(spectatorHost.element).not.toHaveAttribute('disabled');
       });
 
       it('should Host disabled attr exist if disabled input is true', () => {
-        spectatorHost = createHost(
-          `<button hls-button [disabled]="true"></button>`
-        );
+        spectatorHost = createHost(`<button hls-button [disabled]='true'></button>`);
 
         expect(spectatorHost.element).toHaveAttribute('disabled', 'disabled');
       });
 
       it('should Host hls-button-disabled class exist if disabled input is true', () => {
-        spectatorHost = createHost(
-          `<button hls-button [disabled]="true"></button>`
-        );
+        spectatorHost = createHost(`<button hls-button [disabled]='true'></button>`);
 
-        const disabledClass = spectatorHost.element?.className.includes(
-          'hls-button-disabled'
-        );
+        const disabledClass = spectatorHost.element?.className.includes('hls-button-disabled');
 
         expect(disabledClass).toBe(true);
       });
 
       it('should Host hls-button-disabled class does not exist if disabled input is false', () => {
-        spectatorHost = createHost(
-          `<button hls-button [disabled]="false"></button>`
-        );
+        spectatorHost = createHost(`<button hls-button [disabled]='false'></button>`);
 
-        const disabledClass = spectatorHost.element?.className.includes(
-          'hls-button-disabled'
-        );
+        const disabledClass = spectatorHost.element?.className.includes('hls-button-disabled');
 
         expect(disabledClass).toBe(false);
       });

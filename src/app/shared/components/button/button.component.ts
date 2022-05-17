@@ -9,19 +9,9 @@ import {
 
 import type { TextType } from '../text/text.component';
 
-export type ButtonColor =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'warning'
-  | 'danger'
-  | 'light';
+export type ButtonColor = 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger' | 'light';
 
-const BUTTON_HOST_ATTRIBUTES = [
-  'hls-button',
-  'hls-raised-button',
-  'hls-outlined-button',
-];
+const BUTTON_HOST_ATTRIBUTES = ['hls-button', 'hls-raised-button', 'hls-outlined-button'];
 
 @Component({
   templateUrl: './button.component.html',
@@ -61,9 +51,7 @@ export class ButtonComponent implements OnInit {
   }
 
   private hasHostAttributes(...attributes: string[]) {
-    return attributes.some((attribute) =>
-      this.getHostElement().hasAttribute(attribute)
-    );
+    return attributes.some((attribute) => this.getHostElement().hasAttribute(attribute));
   }
 
   private getHostElement() {

@@ -1,11 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { fakeAsync, tick } from '@angular/core/testing';
 
-import {
-  byTestId,
-  createComponentFactory,
-  Spectator,
-} from '@ngneat/spectator/jest';
+import { byTestId, createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 
 import { HeaderComponent } from './header.component';
 
@@ -51,8 +47,7 @@ describe('HeaderComponent', () => {
 
   it('should Host svg-icon element count equals to question-mark icons length', () => {
     const svgIconLength = spectator.queryAll('svg-icon')?.length;
-    const questionMarkIconsLength =
-      spectator.queryAll('.question-mark')?.length;
+    const questionMarkIconsLength = spectator.queryAll('.question-mark')?.length;
 
     expect(svgIconLength).toEqual(questionMarkIconsLength);
   });
@@ -74,18 +69,14 @@ describe('HeaderComponent', () => {
       const animalIcons: Animal[] = ['cat', 'dog'];
 
       for (let animal of animalIcons) {
-        const animalIcon = spectator.query(
-          byTestId(`${animal}-question-mark-icon`)
-        );
+        const animalIcon = spectator.query(byTestId(`${animal}-question-mark-icon`));
 
         if (animalIcon) {
           spectator.click(animalIcon);
         }
 
         expect(spectator.component.questioned.emit).toHaveBeenCalled();
-        expect(spectator.component.questioned.emit).toHaveBeenCalledWith(
-          animal
-        );
+        expect(spectator.component.questioned.emit).toHaveBeenCalledWith(animal);
       }
     });
   });
@@ -112,10 +103,7 @@ describe('HeaderComponent', () => {
       tick(150);
 
       expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
-        '--hls-header-height',
-        ''
-      );
+      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
     }));
 
     it('should call setProperty with header height and narrow height', fakeAsync(() => {
@@ -135,10 +123,7 @@ describe('HeaderComponent', () => {
       tick(150);
 
       expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
-        '--hls-header-height',
-        ''
-      );
+      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
     }));
 
     it('should call setProperty if composedPath length is zero but path is not', fakeAsync(() => {
@@ -158,10 +143,7 @@ describe('HeaderComponent', () => {
       tick(150);
 
       expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
-        '--hls-header-height',
-        ''
-      );
+      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
     }));
   });
 });
