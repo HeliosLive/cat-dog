@@ -1,0 +1,29 @@
+.dialog-info-panel {
+  display: grid;
+  max-width: 80%;
+  padding: 8px;
+  background-color: var(--hls-background-color);
+  box-shadow: 0px 0px 12px 6px #ccc;
+  border-radius: 10px;
+  animation: slideToCenter 0.3s linear;
+}
+
+.dialog-info-backdrop {
+  background: rgb(137, 142, 153);
+  background: linear-gradient(
+    180deg,
+    rgba(137, 142, 153, 0) 0%,
+    rgba(137, 142, 153, 0.25) 50%,
+    rgba(137, 142, 153, 0) 100%
+  );
+}
+
+@keyframes slideToCenter {
+  from {
+    transform: translateY(calc(var(--vh) * -50)) scale(0.2);
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+  }
+}

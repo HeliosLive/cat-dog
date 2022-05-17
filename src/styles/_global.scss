@@ -65,6 +65,9 @@
   /* Article styling */
   --hls-article-height: calc(var(--vh, 1vh) * 30);
 
+  /* Dialog coloring */
+  --hls-dialog-background-color: #f5827e;
+
   /* Svg coloring */
   --hls-svg-animal-active-color: #{$blue-violet};
   --hls-svg-heart-outer-color: #{$black};
@@ -80,6 +83,8 @@
   --hls-svg-save-inner-color: #{$white};
   --hls-svg-save-outer-active-color: #{$black};
   --hls-svg-save-inner-active-color: #{$persian-red};
+  --hls-svg-close-outer-color: transparent;
+  --hls-svg-close-inner-color: #{$black};
 
   /* Color palette */
   --hls-color-soft-light: #{$whisper};

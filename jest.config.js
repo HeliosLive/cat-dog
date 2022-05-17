@@ -41,6 +41,7 @@ module.exports = {
     ],
     moduleNameMapper: {
         '@core/(.*)': 'src/app/core/$1',
+        '@config/(.*)': 'src/app/config/$1',
         '@shared/(.*)': 'src/app/shared/$1',
     }
 };

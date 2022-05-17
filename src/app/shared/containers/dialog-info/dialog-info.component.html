@@ -1,0 +1,10 @@
+<hls-text class="title" type="title">Hey did you know ?</hls-text>
+<hls-text class="content" type="p">{{ 'some random message is exist'.repeat(12) }}
+</hls-text>
+
+<svg-icon class="close-icon" name="cancel" (click)="onClose()"> </svg-icon>
+
+<div class="icons">
+  <svg-icon *ngFor="let emoji of emojis" [name]="emoji" [attr.data-cy]="emoji + '-icon'" (click)="onReaction(emoji)">
+  </svg-icon>
+</div>

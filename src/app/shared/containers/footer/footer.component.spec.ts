@@ -36,7 +36,7 @@ describe('FooterComponent', () => {
     it('should user icon name equals to female', () => {
       const gender: Gender = 'female';
       spectator.component.gender = gender;
-      spectator.detectChanges();
+      spectator.detectComponentChanges();
 
       const userIcon = spectator.queryAll('svg-icon', {
         read: SvgIconComponent,
@@ -49,7 +49,7 @@ describe('FooterComponent', () => {
       const gender: Gender = 'male';
 
       spectator.component.gender = gender;
-      spectator.detectChanges();
+      spectator.detectComponentChanges();
 
       const userIcon = spectator.queryAll('svg-icon', {
         read: SvgIconComponent,
