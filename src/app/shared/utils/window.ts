@@ -21,3 +21,19 @@ export function listenViewportHeight(): void {
       );
     });
 }
+
+export function listenViewportWidth(): void {
+  fromEvent(window, 'resize')
+    .pipe(
+      startWith({ target: { innerWidth: window.innerWidth } }),
+      debounceTime(40),
+      pluck('target', 'innerWidth'),
+      distinctUntilChanged()
+    )
+    .subscribe((width) => {
+      document.documentElement.style.setProperty(
+        '--vw',
+        `${Number(width) * 0.01}px`
+      );
+    });
+}

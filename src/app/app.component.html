@@ -1,4 +1,4 @@
-<hls-header [trackElementForScroll]="body"></hls-header>
+<hls-header [trackElementForScroll]="body" (questioned)="onQuestioned($event)"></hls-header>
 
 <div #body class="body">
     <router-outlet></router-outlet>
