@@ -39,9 +39,9 @@ export class HeaderComponent implements OnInit {
     if (this.trackElementForScroll) {
       fromEvent(this.trackElementForScroll, 'scroll')
         .pipe(
-          debounceTime(250),
+          debounceTime(150),
           map((event: any) => {
-            const { offsetHeight, scrollTop } = event.srcElement;
+            const { offsetHeight, scrollTop } = event.target;
 
             return { offsetHeight, scrollTop };
           }),
