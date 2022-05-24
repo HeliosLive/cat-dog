@@ -19,10 +19,10 @@ import type { Animal } from '@shared/models/animal.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  private readonly bodyStyle = getComputedStyle(document.body);
-  private readonly wideHeight = this.bodyStyle.getPropertyValue('--hls-header-height-wide');
-  private readonly narrowHeight = this.bodyStyle.getPropertyValue('--hls-header-height-narrow');
-  private readonly innerHeight = window.innerHeight;
+  // private readonly bodyStyle = getComputedStyle(document.body);
+  // private readonly wideHeight = this.bodyStyle.getPropertyValue('--hls-header-height-wide');
+  // private readonly narrowHeight = this.bodyStyle.getPropertyValue('--hls-header-height-narrow');
+  // private readonly innerHeight = window.innerHeight;
 
   @Input() trackElementForScroll?: Element;
 
@@ -38,27 +38,28 @@ export class HeaderComponent implements OnInit {
 
   private listenElementScroll(): void {
     if (this.trackElementForScroll) {
-      let iosDebouncer = false;
+      let iosDebouncer = true;
       this.trackElementForScroll.addEventListener('scroll', (event: any) => {
-        if (!iosDebouncer) {
-          iosDebouncer = true;
-          const isComposed = !!(event.composedPath?.length > 0);
-          const src = isComposed ? event?.composedPath[0] : event?.path[0];
-          const scrollTop = src.scrollTop;
-          alert(isComposed);
-          alert({ ...src });
-          alert(scrollTop);
+        if (iosDebouncer) {
+          alert(event?.path[0]);
+          alert(event?.path[0].scrollTop);
+          iosDebouncer = false;
+          // const isComposed = !!(event.composedPath?.length > 0);
+          // const src = isComposed ? event?.composedPath[0] : event?.path[0];
+          // const scrollTop = src.scrollTop;
+          // alert({ ...src });
+          // alert(scrollTop);
 
-          const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
+          // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
 
-          document.documentElement.style.setProperty(
-            '--hls-header-height',
-            scrollAllowed ? this.narrowHeight : this.wideHeight
-          );
+          // document.documentElement.style.setProperty(
+          //   '--hls-header-height',
+          //   scrollAllowed ? this.narrowHeight : this.wideHeight
+          // );
 
-          setTimeout(() => {
-            iosDebouncer = false;
-          }, 2000);
+          //   setTimeout(() => {
+          //     iosDebouncer = false;
+          //   }, 2000);
         }
       });
 
