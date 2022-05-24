@@ -37,8 +37,12 @@ export class HeaderComponent implements OnInit {
   }
 
   private listenElementScroll(): void {
-    alert(!!this.trackElementForScroll);
     if (this.trackElementForScroll) {
+      this.trackElementForScroll.addEventListener('scroll', (event: any) => {
+        // do stuff
+        alert(event);
+      });
+
       fromEvent(this.trackElementForScroll, 'scroll')
         .pipe(
           debounceTime(350),
@@ -46,11 +50,11 @@ export class HeaderComponent implements OnInit {
             const isComposed = !!(event.composedPath?.length > 0);
             const src = isComposed ? event?.composedPath[0] : event?.path[0];
 
-            alert(
-              ` scrollTop: ${src.scrollTop},
-                eventExist: ${!!event},
-                path: ${event?.path[0]},`
-            );
+            // alert(
+            //   ` scrollTop: ${src.scrollTop},
+            //     eventExist: ${!!event},
+            //     path: ${event?.path[0]},`
+            // );
             return src.scrollTop;
           }),
           shareReplay()
