@@ -38,9 +38,25 @@ export class HeaderComponent implements OnInit {
 
   private listenElementScroll(): void {
     if (this.trackElementForScroll) {
+      let iosDebouncer = false;
       this.trackElementForScroll.addEventListener('scroll', (event: any) => {
-        // do stuff
-        alert(event);
+        if (!iosDebouncer) {
+          iosDebouncer = true;
+          const isComposed = !!(event.composedPath?.length > 0);
+          const src = isComposed ? event?.composedPath[0] : event?.path[0];
+          const scrollTop = src.scrollTop;
+
+          const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
+
+          document.documentElement.style.setProperty(
+            '--hls-header-height',
+            scrollAllowed ? this.narrowHeight : this.wideHeight
+          );
+
+          setTimeout(() => {
+            iosDebouncer = false;
+          }, 150);
+        }
       });
 
       fromEvent(this.trackElementForScroll, 'scroll')
@@ -59,13 +75,12 @@ export class HeaderComponent implements OnInit {
           }),
           shareReplay()
         )
-        .subscribe((scrollTop: any) => {
-          const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
-
-          document.documentElement.style.setProperty(
-            '--hls-header-height',
-            scrollAllowed ? this.narrowHeight : this.wideHeight
-          );
+        .subscribe((_scrollTop: any) => {
+          // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
+          // document.documentElement.style.setProperty(
+          //   '--hls-header-height',
+          //   scrollAllowed ? this.narrowHeight : this.wideHeight
+          // );
         });
     }
   }
