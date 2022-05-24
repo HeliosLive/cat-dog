@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="3.463">
-  <testsuite name="HeaderComponent" errors="0" failures="0" skipped="7" timestamp="2022-05-24T22:09:34" time="2.608" tests="8">
-    <testcase classname="HeaderComponent should create" name="HeaderComponent should create" time="0">
-      <skipped/>
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="2.889">
+  <testsuite name="HeaderComponent" errors="0" failures="0" skipped="0" timestamp="2022-05-24T22:45:05" time="2.089" tests="7">
+    <testcase classname="HeaderComponent should create" name="HeaderComponent should create" time="0.152">
     </testcase>
-    <testcase classname="HeaderComponent should Host svg-icon element count equals to question-mark icons length" name="HeaderComponent should Host svg-icon element count equals to question-mark icons length" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent should Host svg-icon element count equals to question-mark icons length" name="HeaderComponent should Host svg-icon element count equals to question-mark icons length" time="0.089">
     </testcase>
-    <testcase classname="HeaderComponent should Host has an img element" name="HeaderComponent should Host has an img element" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent should Host has an img element" name="HeaderComponent should Host has an img element" time="0.082">
     </testcase>
-    <testcase classname="HeaderComponent should host data-cy attribute equals to testId input" name="HeaderComponent should host data-cy attribute equals to testId input" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent should host data-cy attribute equals to testId input" name="HeaderComponent should host data-cy attribute equals to testId input" time="0.075">
     </testcase>
-    <testcase classname="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" name="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" name="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" time="0.071">
     </testcase>
-    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and wide height" name="HeaderComponent listenElementScroll should call setProperty with header height and wide height" time="0.207">
+    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and wide height" name="HeaderComponent listenElementScroll should call setProperty with header height and wide height" time="0.105">
     </testcase>
-    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" name="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" time="0">
-      <skipped/>
-    </testcase>
-    <testcase classname="HeaderComponent listenElementScroll should call setProperty if composedPath length is zero but path is not" name="HeaderComponent listenElementScroll should call setProperty if composedPath length is zero but path is not" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" name="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" time="0.088">
     </testcase>
   </testsuite>
 </testsuites>

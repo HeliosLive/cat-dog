@@ -91,7 +91,7 @@ describe('HeaderComponent', () => {
     it('should call setProperty with header height and wide height', fakeAsync(() => {
       const projectedElement = ContentProjectionSpectator.query('div');
 
-      let customEvent: any = new CustomEvent('scroll');
+      const customEvent: any = new CustomEvent('scroll');
 
       if (projectedElement) {
         projectedElement.dispatchEvent(customEvent);
@@ -109,35 +109,15 @@ describe('HeaderComponent', () => {
     it('should call setProperty with header height and narrow height', fakeAsync(() => {
       const projectedElement = ContentProjectionSpectator.query('div');
 
-      let event = new CustomEvent('scroll');
-      event.composedPath = [
-        {
+      const mockEvent: Event = <Event>(<any>{
+        target: {
+          offsetHeight: 600,
           scrollTop: 2000,
         },
-      ] as any;
+      });
 
-      if (projectedElement) {
-        projectedElement.dispatchEvent(event);
-      }
-
-      tick(150);
-
-      expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
-        '--hls-header-height',
-        ''
-      );
-    }));
-
-    it('should call setProperty if composedPath length is zero but path is not', fakeAsync(() => {
-      const projectedElement = ContentProjectionSpectator.query('div');
-
-      let event = new CustomEvent('scroll');
-      (event as any).path = [
-        {
-          scrollTop: 2000,
-        },
-      ];
+      const event = new CustomEvent('scroll');
+      event.target?.dispatchEvent(mockEvent);
 
       if (projectedElement) {
         projectedElement.dispatchEvent(event);

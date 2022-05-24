@@ -4,11 +4,12 @@ import {
   EventEmitter,
   HostBinding,
   Input,
+  OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
 
-import { debounceTime, fromEvent, map, shareReplay, tap } from 'rxjs';
+import { debounceTime, fromEvent, map, shareReplay, Subject, takeUntil, tap } from 'rxjs';
 
 import type { Animal } from '@shared/models/animal.type';
 
@@ -18,10 +19,11 @@ import type { Animal } from '@shared/models/animal.type';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   private readonly bodyStyle = getComputedStyle(document.body);
   private readonly wideHeight = this.bodyStyle.getPropertyValue('--hls-header-height-wide');
   private readonly narrowHeight = this.bodyStyle.getPropertyValue('--hls-header-height-narrow');
+  private destroy$ = new Subject<void>();
 
   @Input() trackElementForScroll?: Element;
 
@@ -33,6 +35,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.listenElementScroll();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   private listenElementScroll(): void {
@@ -53,6 +60,7 @@ export class HeaderComponent implements OnInit {
               scrollAllowed ? this.narrowHeight : this.wideHeight
             );
           }),
+          takeUntil(this.destroy$),
           shareReplay()
         )
         .subscribe();
