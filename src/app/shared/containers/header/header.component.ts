@@ -38,24 +38,28 @@ export class HeaderComponent implements OnInit {
 
   private listenElementScroll(): void {
     if (this.trackElementForScroll) {
+      let iosDebouncer = true;
       this.trackElementForScroll.addEventListener('scroll', (event: any) => {
-        alert(!!event);
-        // const isComposed = !!(event.composedPath?.length > 0);
-        // const src = isComposed ? event?.composedPath[0] : event?.path[0];
-        // const scrollTop = src.scrollTop;
-        // alert({ ...src });
-        // alert(scrollTop);
+        if (iosDebouncer) {
+          alert(event?.path);
+          iosDebouncer = false;
+          // const isComposed = !!(event.composedPath?.length > 0);
+          // const src = isComposed ? event?.composedPath[0] : event?.path[0];
+          // const scrollTop = src.scrollTop;
+          // alert({ ...src });
+          // alert(scrollTop);
 
-        // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
+          // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
 
-        // document.documentElement.style.setProperty(
-        //   '--hls-header-height',
-        //   scrollAllowed ? this.narrowHeight : this.wideHeight
-        // );
+          // document.documentElement.style.setProperty(
+          //   '--hls-header-height',
+          //   scrollAllowed ? this.narrowHeight : this.wideHeight
+          // );
 
-        //   setTimeout(() => {
-        //     iosDebouncer = false;
-        //   }, 2000);
+          setTimeout(() => {
+            iosDebouncer = true;
+          }, 200);
+        }
       });
 
       fromEvent(this.trackElementForScroll, 'scroll')
