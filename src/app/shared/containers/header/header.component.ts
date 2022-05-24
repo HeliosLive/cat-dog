@@ -41,7 +41,8 @@ export class HeaderComponent implements OnInit {
       let iosDebouncer = true;
       this.trackElementForScroll.addEventListener('scroll', (event: any) => {
         if (iosDebouncer) {
-          alert(event?.path);
+          // alert(JSON.stringify(event));
+          alert(event.srcElement.scrollTop);
           iosDebouncer = false;
           // const isComposed = !!(event.composedPath?.length > 0);
           // const src = isComposed ? event?.composedPath[0] : event?.path[0];
@@ -58,7 +59,7 @@ export class HeaderComponent implements OnInit {
 
           setTimeout(() => {
             iosDebouncer = true;
-          }, 200);
+          }, 150);
         }
       });
 
