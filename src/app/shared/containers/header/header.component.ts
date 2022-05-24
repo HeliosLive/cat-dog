@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
   }
 
   private listenElementScroll(): void {
+    alert(!!this.trackElementForScroll);
     if (this.trackElementForScroll) {
       fromEvent(this.trackElementForScroll, 'scroll')
         .pipe(
