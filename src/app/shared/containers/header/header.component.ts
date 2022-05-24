@@ -45,6 +45,9 @@ export class HeaderComponent implements OnInit {
           const isComposed = !!(event.composedPath?.length > 0);
           const src = isComposed ? event?.composedPath[0] : event?.path[0];
           const scrollTop = src.scrollTop;
+          alert(isComposed);
+          alert({ ...src });
+          alert(scrollTop);
 
           const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
 
@@ -55,7 +58,7 @@ export class HeaderComponent implements OnInit {
 
           setTimeout(() => {
             iosDebouncer = false;
-          }, 150);
+          }, 2000);
         }
       });
 
