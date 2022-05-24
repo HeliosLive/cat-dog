@@ -8,7 +8,7 @@ import {
   Output,
 } from '@angular/core';
 
-import { debounceTime, fromEvent, map, shareReplay } from 'rxjs';
+import { debounceTime, fromEvent, map, shareReplay, tap } from 'rxjs';
 
 import type { Animal } from '@shared/models/animal.type';
 
@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   private readonly bodyStyle = getComputedStyle(document.body);
   private readonly wideHeight = this.bodyStyle.getPropertyValue('--hls-header-height-wide');
   private readonly narrowHeight = this.bodyStyle.getPropertyValue('--hls-header-height-narrow');
-  private readonly innerHeight = window.innerHeight;
 
   @Input() trackElementForScroll?: Element;
 
@@ -38,77 +37,25 @@ export class HeaderComponent implements OnInit {
 
   private listenElementScroll(): void {
     if (this.trackElementForScroll) {
-      // let iosDebouncer = true;
-      // this.trackElementForScroll.addEventListener('scroll', (event: any) => {
-      //   if (iosDebouncer) {
-      //     // alert(JSON.stringify(event));
-      //     alert(event.srcElement.scrollTop);
-      //     iosDebouncer = false;
-      //     // const isComposed = !!(event.composedPath?.length > 0);
-      //     // const src = isComposed ? event?.composedPath[0] : event?.path[0];
-      //     // const scrollTop = src.scrollTop;
-      //     // alert({ ...src });
-      //     // alert(scrollTop);
-
-      //     // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
-
-      //     // document.documentElement.style.setProperty(
-      //     //   '--hls-header-height',
-      //     //   scrollAllowed ? this.narrowHeight : this.wideHeight
-      //     // );
-
-      //     setTimeout(() => {
-      //       iosDebouncer = true;
-      //     }, 150);
-      //   }
-      // });
-
       fromEvent(this.trackElementForScroll, 'scroll')
         .pipe(
-          debounceTime(150),
+          debounceTime(250),
           map((event: any) => {
-            const scrollTop = event.srcElement.scrollTop;
+            const { offsetHeight, scrollTop } = event.srcElement;
 
-            // alert(
-            //   ` scrollTop: ${src.scrollTop},
-            //     eventExist: ${!!event},
-            //     path: ${event?.path[0]},`
-            // );
-            return scrollTop;
+            return { offsetHeight, scrollTop };
+          }),
+          tap((src: { offsetHeight: number; scrollTop: number }) => {
+            const { offsetHeight, scrollTop } = src;
+            const scrollAllowed = Math.floor(scrollTop) / offsetHeight > 0.4;
+            document.documentElement.style.setProperty(
+              '--hls-header-height',
+              scrollAllowed ? this.narrowHeight : this.wideHeight
+            );
           }),
           shareReplay()
         )
-        .subscribe((scrollTop: any) => {
-          const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
-          document.documentElement.style.setProperty(
-            '--hls-header-height',
-            scrollAllowed ? this.narrowHeight : this.wideHeight
-          );
-        });
-
-      fromEvent(this.trackElementForScroll, 'scroll')
-        .pipe(
-          debounceTime(350),
-          map((event: any) => {
-            const isComposed = !!(event.composedPath?.length > 0);
-            const src = isComposed ? event?.composedPath[0] : event?.path[0];
-
-            // alert(
-            //   ` scrollTop: ${src.scrollTop},
-            //     eventExist: ${!!event},
-            //     path: ${event?.path[0]},`
-            // );
-            return src.scrollTop;
-          }),
-          shareReplay()
-        )
-        .subscribe((_scrollTop: any) => {
-          // const scrollAllowed = Math.floor(scrollTop) / this.innerHeight > 0.4;
-          // document.documentElement.style.setProperty(
-          //   '--hls-header-height',
-          //   scrollAllowed ? this.narrowHeight : this.wideHeight
-          // );
-        });
+        .subscribe();
     }
   }
 }
