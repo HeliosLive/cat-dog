@@ -67,14 +67,14 @@ export class HeaderComponent implements OnInit {
         .pipe(
           debounceTime(150),
           map((event: any) => {
-            const src = event.srcElement.scrollTop;
+            const scrollTop = event.srcElement.scrollTop;
 
             // alert(
             //   ` scrollTop: ${src.scrollTop},
             //     eventExist: ${!!event},
             //     path: ${event?.path[0]},`
             // );
-            return src.scrollTop;
+            return scrollTop;
           }),
           shareReplay()
         )
