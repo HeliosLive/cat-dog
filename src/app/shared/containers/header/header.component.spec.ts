@@ -10,10 +10,12 @@ import type { Animal } from '@shared/models/animal.type';
 @Component({
   selector: 'hls-header-test',
   template: `<hls-header [trackElementForScroll]="body"></hls-header>
-    <div #body></div>`,
+    <div #body style="height: {{ height }};"></div>`,
 })
 export class ContentProjectionHeaderComponent {
   @ViewChild('body') body!: Element;
+
+  height = '800px';
 }
 
 describe('HeaderComponent', () => {
@@ -89,32 +91,33 @@ describe('HeaderComponent', () => {
     it('should call setProperty with header height and wide height', fakeAsync(() => {
       const projectedElement = ContentProjectionSpectator.query('div');
 
-      let event = new CustomEvent('scroll');
-      event.composedPath = [
-        {
-          scrollTop: 0,
-        },
-      ] as any;
+      const customEvent: any = new CustomEvent('scroll');
 
       if (projectedElement) {
-        projectedElement.dispatchEvent(event);
+        projectedElement.dispatchEvent(customEvent);
       }
 
       tick(150);
 
       expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
+      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
+        '--hls-header-height',
+        ''
+      );
     }));
 
     it('should call setProperty with header height and narrow height', fakeAsync(() => {
       const projectedElement = ContentProjectionSpectator.query('div');
 
-      let event = new CustomEvent('scroll');
-      event.composedPath = [
-        {
+      const mockEvent: Event = <Event>(<any>{
+        target: {
+          offsetHeight: 600,
           scrollTop: 2000,
         },
-      ] as any;
+      });
+
+      const event = new CustomEvent('scroll');
+      event.target?.dispatchEvent(mockEvent);
 
       if (projectedElement) {
         projectedElement.dispatchEvent(event);
@@ -123,27 +126,10 @@ describe('HeaderComponent', () => {
       tick(150);
 
       expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
-    }));
-
-    it('should call setProperty if composedPath length is zero but path is not', fakeAsync(() => {
-      const projectedElement = ContentProjectionSpectator.query('div');
-
-      let event = new CustomEvent('scroll');
-      (event as any).path = [
-        {
-          scrollTop: 2000,
-        },
-      ];
-
-      if (projectedElement) {
-        projectedElement.dispatchEvent(event);
-      }
-
-      tick(150);
-
-      expect(document.documentElement.style.setProperty).toHaveBeenCalled();
-      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith('--hls-header-height', '');
+      expect(document.documentElement.style.setProperty).toHaveBeenCalledWith(
+        '--hls-header-height',
+        ''
+      );
     }));
   });
 });

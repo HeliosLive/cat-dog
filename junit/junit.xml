@@ -1,61 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="1" errors="0" time="3.45">
-  <testsuite name="DialogInfoComponent" errors="0" failures="1" skipped="9" timestamp="2022-05-17T12:11:30" time="2.558" tests="10">
-    <testcase classname="DialogInfoComponent should create" name="DialogInfoComponent should create" time="0">
-      <skipped/>
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="2.889">
+  <testsuite name="HeaderComponent" errors="0" failures="0" skipped="0" timestamp="2022-05-24T22:45:05" time="2.089" tests="7">
+    <testcase classname="HeaderComponent should create" name="HeaderComponent should create" time="0.152">
     </testcase>
-    <testcase classname="DialogInfoComponent should host data-cy attribute equals to testId input" name="DialogInfoComponent should host data-cy attribute equals to testId input" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent should Host svg-icon element count equals to question-mark icons length" name="HeaderComponent should Host svg-icon element count equals to question-mark icons length" time="0.089">
     </testcase>
-    <testcase classname="DialogInfoComponent should call onClose after clicking the close icon" name="DialogInfoComponent should call onClose after clicking the close icon" time="0.031">
-      <failure>Error: Unexpected value &apos;[object Object]&apos; declared by the module &apos;DynamicTestModule&apos;. Please add a @Pipe/@Directive/@Component annotation.
-    at verifySemanticsOfNgModuleDef (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\core.mjs:23891:15)
-    at Function.get (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\core.mjs:23825:21)
-    at R3TestBedCompiler.applyProviderOverridesToModule (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1067:29)
-    at R3TestBedCompiler.compileTestModule (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1315:14)
-    at R3TestBedCompiler.finalize (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:921:14)
-    at TestBedRender3.get testModuleRef [as testModuleRef] (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1796:49)
-    at TestBedRender3.inject (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1719:29)
-    at TestBedRender3.createComponent (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1759:44)
-    at Function.createComponent (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@angular\core\fesm2015\testing.mjs:1617:37)
-    at createSpectator (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@ngneat\spectator\fesm2015\ngneat-spectator.mjs:1399:29)
-    at C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\@ngneat\spectator\fesm2015\ngneat-spectator.mjs:1391:27
-    at C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\src\app\shared\containers\dialog-info\dialog-info.component.spec.ts:37:17
-    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\zone.js\bundles\zone-testing-bundle.umd.js:409:30)
-    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\zone.js\bundles\zone-testing-bundle.umd.js:3803:43)
-    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\zone.js\bundles\zone-testing-bundle.umd.js:408:56)
-    at Zone.Object.&lt;anonymous&gt;.Zone.run (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\zone.js\bundles\zone-testing-bundle.umd.js:169:47)
-    at Object.wrappedFunc (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\zone.js\bundles\zone-testing-bundle.umd.js:4288:34)
-    at Promise.then.completed (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusHook (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\run.js:181:40)
-    at _runTest (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\run.js:148:5)
-    at _runTestsForDescribeBlock (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\a.aydin\Desktop\Personal Apps\cat-dog\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)</failure>
+    <testcase classname="HeaderComponent should Host has an img element" name="HeaderComponent should Host has an img element" time="0.082">
     </testcase>
-    <testcase classname="DialogInfoComponent emojis should emojis data equals to emoji icons enum data" name="DialogInfoComponent emojis should emojis data equals to emoji icons enum data" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent should host data-cy attribute equals to testId input" name="HeaderComponent should host data-cy attribute equals to testId input" time="0.075">
     </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has amazed icon and after click calls the onReaction method with amazed" name="DialogInfoComponent emojis should host has amazed icon and after click calls the onReaction method with amazed" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" name="HeaderComponent questioned should call the method with exact value after clicking the related svg-icon" time="0.071">
     </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has embarrassed icon and after click calls the onReaction method with embarrassed" name="DialogInfoComponent emojis should host has embarrassed icon and after click calls the onReaction method with embarrassed" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and wide height" name="HeaderComponent listenElementScroll should call setProperty with header height and wide height" time="0.105">
     </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has laughing icon and after click calls the onReaction method with laughing" name="DialogInfoComponent emojis should host has laughing icon and after click calls the onReaction method with laughing" time="0">
-      <skipped/>
-    </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has indifferent icon and after click calls the onReaction method with indifferent" name="DialogInfoComponent emojis should host has indifferent icon and after click calls the onReaction method with indifferent" time="0">
-      <skipped/>
-    </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has happiness icon and after click calls the onReaction method with happiness" name="DialogInfoComponent emojis should host has happiness icon and after click calls the onReaction method with happiness" time="0">
-      <skipped/>
-    </testcase>
-    <testcase classname="DialogInfoComponent emojis should host has crying icon and after click calls the onReaction method with crying" name="DialogInfoComponent emojis should host has crying icon and after click calls the onReaction method with crying" time="0">
-      <skipped/>
+    <testcase classname="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" name="HeaderComponent listenElementScroll should call setProperty with header height and narrow height" time="0.088">
     </testcase>
   </testsuite>
 </testsuites>
