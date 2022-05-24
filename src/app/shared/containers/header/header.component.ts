@@ -20,12 +20,8 @@ import type { Animal } from '@shared/models/animal.type';
 })
 export class HeaderComponent implements OnInit {
   private readonly bodyStyle = getComputedStyle(document.body);
-  private readonly wideHeight = this.bodyStyle.getPropertyValue(
-    '--hls-header-height-wide'
-  );
-  private readonly narrowHeight = this.bodyStyle.getPropertyValue(
-    '--hls-header-height-narrow'
-  );
+  private readonly wideHeight = this.bodyStyle.getPropertyValue('--hls-header-height-wide');
+  private readonly narrowHeight = this.bodyStyle.getPropertyValue('--hls-header-height-narrow');
   private readonly innerHeight = window.innerHeight;
 
   @Input() trackElementForScroll?: Element;
@@ -44,13 +40,18 @@ export class HeaderComponent implements OnInit {
     if (this.trackElementForScroll) {
       fromEvent(this.trackElementForScroll, 'scroll')
         .pipe(
+          debounceTime(350),
           map((event: any) => {
             const isComposed = !!(event.composedPath?.length > 0);
             const src = isComposed ? event?.composedPath[0] : event?.path[0];
 
+            alert(
+              ` scrollTop: ${src.scrollTop},
+                eventExist: ${!!event},
+                path: ${event?.path[0]},`
+            );
             return src.scrollTop;
           }),
-          debounceTime(150),
           shareReplay()
         )
         .subscribe((scrollTop: any) => {

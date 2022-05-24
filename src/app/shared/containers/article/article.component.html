@@ -6,7 +6,7 @@
   <img #img [src]="article.image" alt="cat">
   <svg-icon class="heart__small" [class.active]="liked" name="heart" [attr.testId]="'heart'" (click)="onLike()">
   </svg-icon>
-  <hls-text [ngClass]="'description-show__' + (showMore ? 'less' : 'more')" type="span" (click)="onShowMore()">
+  <hls-text [ngClass]="'description-show__' + (showMore ? 'more' : 'less')" type="span" (click)="onShowMore()">
     {{article.description}}{{article.description}}{{article.description}}{{article.description}}
   </hls-text>
   <hls-text type="caption">{{article.date | hlsTimeAgo}}</hls-text>

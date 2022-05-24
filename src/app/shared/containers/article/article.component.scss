@@ -13,7 +13,7 @@
       'content content content'
       'like description description'
       'date date .';
-    grid-template-rows: 3rem var(--hls-article-height) 3rem 1rem;
+    grid-template-rows: 3rem auto auto 1rem;
     grid-template-columns: 3rem auto 2rem;
     padding: 0.5rem 0;
 
@@ -28,14 +28,13 @@
 
     .description-show {
       &__less {
-        position: absolute;
-        font-weight: bolder;
-      }
-      &__more {
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+      }
+      &__more {
+        font-weight: bolder;
       }
     }
 
